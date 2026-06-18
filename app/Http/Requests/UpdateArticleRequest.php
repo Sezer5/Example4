@@ -12,7 +12,7 @@ class UpdateArticleRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,8 @@ class UpdateArticleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required|min:1|max:255|unique:articles,title,' . $this->article->id,
+            'thumbnail' => 'required|image|mimes:png,webp,jpeg,jpg|max:2048'
         ];
     }
 }

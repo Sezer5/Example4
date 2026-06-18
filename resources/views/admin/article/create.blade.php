@@ -17,7 +17,7 @@
 
             <div class="card p-4">
                 <div class="col-md-4">
-                    <form action="{{ route('admin.article.store') }}" method="POST">
+                    <form action="{{ route('admin.article.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="" class="form-label">Title</label>
@@ -41,6 +41,19 @@
                                     </option>
                                 @endforeach
                             </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for=""
+                                class="form-label @error('thumbnail') is-invalid @enderror">Thumbnail</label>
+                            <input type="file" class="form-control" name="thumbnail" id="thumbnail"
+                                aria-describedby="fileHelpId" />
+                            @error('thumbnail')
+                                <span class="invalid-feedback">
+                                    <strong>
+                                        {{ $message }}
+                                    </strong>
+                                </span>
+                            @enderror
                         </div>
 
                         <button type="submit" class="btn btn-primary">

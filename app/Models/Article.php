@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    //
+    protected $fillable = ['title', 'thumbnail'];
+
+    public function keywords()
+    {
+        return $this->belongsToMany(Keyword::class);
+    }
 }

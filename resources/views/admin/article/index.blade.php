@@ -21,6 +21,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">Id</th>
+                                <th scope="col">Image</th>
                                 <th scope="col">Title</th>
                                 <th scope="col">Keywords</th>
                                 <th scope="col">Edit</th>
@@ -31,6 +32,7 @@
                             @foreach ($articles as $article)
                                 <tr>
                                     <td>{{ $article->id }}</td>
+                                    <td><img src="{{ asset($article->thumbnail) }}" width="50"></td>
                                     <td>{{ $article->title }}</td>
                                     <td>
                                         @foreach ($article->keywords as $keyword)
