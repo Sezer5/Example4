@@ -18,6 +18,10 @@
                     class="nav-link {{ Route::is('admin.article.*') ? 'active' : '' }}"><i class="bi bi-file"></i>
                     Article</a>
             </li>
+            <li class="nav-item"><a href="{{ route('admin.poem.index') }}"
+                    class="nav-link {{ Route::is('admin.poem.*') ? 'active' : '' }}"><i class="bi bi-file"></i>
+                    Poem</a>
+            </li>
             <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-gear me-2"></i> Ayarlar</a></li>
         </ul>
     </nav>
